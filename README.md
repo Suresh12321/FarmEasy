@@ -53,16 +53,3 @@ Some future improvements for the farm Buddy platform could include:<br>
 •Adding other technological api's that farmers needed for smart farming.<br>
 <h2>Conclusion</h2><br>
 In conclusion, farm Buddy is a farmer-to-customer online marketplace platform that provides a simple, secure, and cost-effective way for farmers to connect with customers directly. The platform leverages modern technologies such as HTML, CSS, Bootstrap, JavaScript,and AMD Instances to provide a seamless and efficient user experience.Implemented an in-built agrichat bot providing farmers with interactive assistance and answering their questions in real-time.<br>
-<h2>Instance Information</h2><br>
-•Machine Type-t2d-standard-1<br>
-•CPU Platform-AMD Milian<br>
-•Architecture-x86/64<br>
-•Zone-Las Vegas(us-west4-b)<br>
-•<a href="http://34.125.9.93"> 34.125.9.93 </a> <br>
-<img src="https://user-images.githubusercontent.com/95526528/232857975-04ff720c-b5bf-4e5d-92ef-953dc9ef121f.png">
-<img src="https://user-images.githubusercontent.com/95526528/232858102-55f2ddcd-b4d0-4ee8-8ff8-89170c718bd9.png"><br>
-<h2>Contributors:</h2><br>
-•Srikar Tenneti-Leader,Developer,UI/UX Designer<a href="https://github.com/tinkten7">GITHUB    -</a> <a href="https://www.linkedin.com/in/srikar-tenneti-849522235/">LinkedIn</a><br>
-•Sriraj Tata-Founder,Developer,Cloud Operator,Tester<a href="https://github.com/STRIDER1512">GITHUB    -</a> <a href="https://www.linkedin.com/in/sriraj-tata-0499b7228/">LinkedIn</a><br>
-•Sudhish Amiti-Member,Developer,Backend Developer<a href="https://www.linkedin.com/in/sudhish-amiti-491805224/">LinkedIn</a> <br>
-•Himaja Vendra-Member,Developer,Editor <a href="https://github.com/himajavendra">GITHUB   -</a> <a href="https://www.linkedin.com/in/himaja-vendra-48581324b/">LinkedIn</a> <br>
