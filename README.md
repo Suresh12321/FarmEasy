@@ -1,8 +1,7 @@
- <h1>FarmBuddy<br>
+ <h1>FarmEasy<br>
 Your Farm Partner</h1>
 <h2>Middlemen less Initiative,An E-commerce website for farmers,To Learn Farming in offline way and online way.
 Done as part of the Hackathon conducted by the Gfg,Google and Amd.</h2>
-<img src="https://user-images.githubusercontent.com/95526528/232857161-ba1ea007-f656-4962-9bd1-829fdd925184.png">
 <h2>Introduction</h2>
 In Agriculture sector there has been always middlemen between the customer and farmer,why should middlemen has to be benefited??..While the Farmer doesn't even getting the profits,if the farmer doesn't get profit who will sought the seeds for the next yield season?About 88% of the suicides of the farmers are because of the debt burden,if the farmer doesn't have enough money to grow the crops then who will grow the crops,farmer is the backbone of our country,if we are not supporting our farmers the country is not gonna survive without the backbone.
 <h2>About</h2>
@@ -38,7 +37,7 @@ The farm Buddy platform provides the following features:<br>
 • By maps It is easy To directly visit your nearby farms.<br>
 •	The platform is secure and provides encryption for sensitive data such as customer payment information.<br>
 <h2>Getting Started</h2><br>
-1)To get started with the FarmBuddy platform, users must first create an account.<br>
+1)To get started with the FarmEasy platform, users must first create an account.<br>
 2)The price of the product will be daily updated on the standard basis of their locally state government.<br>
 3)With the help of the maps provided they can meet the individual or transport the goods.<br>
 6)Customers can contact farmers virtually through the video calling feature .<br>
