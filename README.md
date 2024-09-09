@@ -13,22 +13,13 @@ Farm Buddy is a farmer-to-customer,B2B,B2C,C2C online marketplace platform that 
 •	Bootstrap<br>
 •	JavaScript<br>
 <h3>Backend</h3><br>
-•	Google FireBase<br>
-•	Amd Instance(t2d Server)<br>
-<h3>APIs</h3>
-•	Google maps<br>
-<h3>Chatbot</h3><br>
-•DialogFlowAPI<br>
-The chatbot is designed to assist customers in finding answers to Frequently Asked Questions<br>
+<br>
+
 <h3>Tech Stack Used</h3>
-•	Github<br>
-•	Discord<br>
-•	Trello<br>
-•	Unsplash<br>
-•	GeeksforGeeks<br>
+<br>
 
 <h2>Features</h2><br>
-The farm Buddy platform provides the following features:<br>
+The FarmEasy platform provides the following features:<br>
 •	A simple and intuitive user interface that allows farmers to list their products and customers to search for and purchase these products.<br>
 •	Customers can create and manage their profiles, view their order , and track their orders.<br>
 •	Farmers can manage their product listings, view orders, and manage their profiles.<br>
