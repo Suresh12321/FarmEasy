@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="signin.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">
+            <i class="fas fa-seedling"></i> FarmEasy
+        </a>
+    
+        <nav class="navbar">
+            <a href="./index.html">Home</a>
+            <a href="./features.html">Features</a>
+            <a href="./categories.html">Categories</a>
+            <a href="./products.html">Products</a>
+            <a href="./learn.html">Learn</a>
+            <a href="./team.html">Team</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Centered shopping cart header -->
+        <div class="header-content">
+            <h1 class="cart-title">Your Shopping Cart</h1>
+            <a href="products.html" class="continue-shopping">Continue Shopping</a>
+        </div>
+
+        <div class="cart-container">
+            <h2>Cart Items</h2>
+            <div id="cart-items">
+                <p>Your cart is empty.</p>
+            </div>
+            <div class="cart-summary">
+                <h3>Total: $<span id="cart-total">0.00</span></h3>
+                <button id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+        // Get cart from localStorage and display it in cart.html
+        document.addEventListener('DOMContentLoaded', function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                cartTotal.textContent = '0.00';
+            } else {
+                let total = 0;
+                cartContainer.innerHTML = '';
+        
+                cart.forEach(item => {
+                    const itemTotal = (item.price * item.quantity).toFixed(2);
+                    total += parseFloat(itemTotal);
+                    const cartItem = document.createElement('div');
+                    cartItem.innerHTML = `
+                        <div class="cart-item">
+                            <span>${item.name} (${item.quantity})</span>
+                            <span>$${itemTotal}</span>
+                            <button onclick="removeFromCart('${item.name}')">Remove</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(cartItem);
+                });
+        
+                cartTotal.textContent = total.toFixed(2);
+            }
+        });
+        
+        // Remove product from cart
+        function removeFromCart(productName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.name !== productName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload(); // Reload the page to update cart display
+        }
+    </script>
+</body>
+</html>
