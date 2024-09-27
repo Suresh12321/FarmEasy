@@ -13,49 +13,35 @@
 <body>
     <!-- header section starts  -->
     <header class="header">
-        <a href="index.html" class="logo"><i class="fas fa-seedling"></i> FarmEasy</a>
-        <nav class="navbar">
-            <a href="index.html">home</a>
-            <a href="features.html">features</a>
-            <a href="categories.html">categories</a>
-            <a href="products.html">products</a>
-            <a href="learn.html">Learn</a>
-            <a href="team.html">Team</a>
-            <a href="./signin.html">Sign in/up</a>
-        </nav>
-        <div class="icons">
-            <div class="fas fa-bars" id="menu-btn"></div>
-            <div class="fas fa-search" id="search-btn"></div>
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fas fa-user" id="login-btn"></div>
-        </div>
-        <form action="" class="search-form">
-            <input type="search" id="search-box" placeholder="search here..." />
-            <label for="search-box" class="fas fa-search"></label>
-        </form>
-        <div class="shopping-cart">
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="https://raw.githubusercontent.com/STRIDER1512/FarmEasy/main/FarmEasy/images/cart-img-1.png" alt="" />
-                <div class="content">
-                    <h3>watermelon</h3>
-                    <span class="price">₹44.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box">
-                <i class="fas fa-trash"></i>
-                <img src="https://raw.githubusercontent.com/STRIDER1512/FarmEasy/main/FarmEasy/images/cart-img-2.png" alt="" />
-                <div class="content">
-                    <h3>onion</h3>
-                    <span class="price">$24.99/-</span>
-                    <span class="quantity">qty : 1</span>
-                </div>
-            </div>
-            <div class="box"></div>
-            <div class="total">total : $68.98/-</div>
-            <a href="" class="btn">checkout</a>
-        </div>
+      <a href="index.html" class="logo">
+        <i class="fas fa-seedling"></i> FarmEasy
+      </a>
+
+      <nav class="navbar">
+        <a href="index.html">home</a>
+        <a href="features.html">features</a>
+        <a href="categories.html">categories</a>
+        <a href="products.html">products</a>
+        <a href="learn.html">Learn</a>
+        <a href="team.html">Team</a>
+        <a href="./signin.html">Sign in/up</a>
+      </nav>
+
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <a href="cart.html">
+          <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        </a>
+        <div class="fas fa-user" id="login-btn"></div>
+      </div>
+
+      <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </form>
+
+      
     </header>
     <!-- header section ends -->
 
@@ -75,7 +61,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <a href="#" class="btn">add to cart</a>
+              <a href="#" class="btn" onclick="addToCart('Orange', 70)">add to cart</a>
             </div>
   
             <div class="swiper-slide box">
@@ -89,7 +75,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <a href="#" class="btn">add to cart</a>
+              <a href="#" class="btn" onclick="addToCart('onion', 20)">add to cart</a>
             </div>
   
             
@@ -105,7 +91,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <a href="#" class="btn">add to cart</a>
+              <a href="#" class="btn" onclick="addToCart('cabb', 30)">add to cart</a>
             </div>
           </div>
         </div>
@@ -123,7 +109,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
               </div>
-              <a href="#" class="btn">add to cart</a>
+              <a href="#" class="btn" onclick="addToCart('potato', 40)">add to cart</a>
             </div>
   
             
@@ -138,7 +124,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
               </div>
-              <a href="#" class="btn">add to cart</a>
+              <a href="#" class="btn" onclick="addToCart('carrot', 50)">add to cart</a>
             </div>
   
             <div class="swiper-slide box">
@@ -152,7 +138,7 @@
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <a href="#" class="btn">add to cart</a>
+              <a href="#" class="btn" onclick="addToCart('lemon', 60)">add to cart</a>
             </div>
           </div>
         </div>
