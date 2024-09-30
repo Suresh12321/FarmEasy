@@ -1,141 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmEasy</title>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
-
-    <!-- font awesome cdn link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-
-    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- header section starts  -->
+
+    <style>
+        /* Style for the user info popup */
+        .user-details {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            height: 120px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .user-details p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .user-details strong {
+            color: #28a745;
+            font-size: 16px;
+        }
+
+        .logout-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background-color: #218838;
+        }
+
+        .icons {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
     <!-- header section starts  -->
     <header class="header">
-      <a href="index.html" class="logo">
-        <i class="fas fa-seedling"></i> FarmEasy
-      </a>
-
-      <nav class="navbar">
-        <a href="index.html">home</a>
-        <a href="features.html">features</a>
-        <a href="categories.html">categories</a>
-        <a href="products.html">products</a>
-        <a href="learn.html">Learn</a>
-        <a href="team.html">Team</a>
-        <a href="./signin.html">Sign in/up</a>
-      </nav>
-
-      <div class="icons">
-        <div class="fas fa-bars" id="menu-btn"></div>
-        <div class="fas fa-search" id="search-btn"></div>
-        <a href="cart.html">
-          <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <a href="index.html" class="logo">
+            <i class="fas fa-seedling"></i> FarmEasy
         </a>
-        <div class="fas fa-user" id="login-btn"></div>
-      </div>
 
-      <form action="" class="search-form">
-        <input type="search" id="search-box" placeholder="search here..." />
-        <label for="search-box" class="fas fa-search"></label>
-      </form>
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="features.html">features</a>
+            <a href="categories.html">categories</a>
+            <a href="products.html">products</a>
+            <a href="learn.html">Learn</a>
+            <a href="team.html">Team</a>
+            <a href="./signin.html">Sign in/up</a>
+        </nav>
 
-      
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <a href="cart.html">
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            </a>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here..." />
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
     </header>
     <!-- header section ends -->
 
-  
- 
-
-    <!-- header section ends -->
-
     <!-- home section starts  -->
-
     <section class="home" id="home">
-      <div class="content">
-        <h3><span>fresh</span> and <span>organic</span> products for you</h3>
-        <p>
-          From our Farm to your Home without any intermediaries
-        </p>
-        <a href="products.html" class="btn">shop now</a>
-      </div>
+        <div class="content">
+            <h3><span>fresh</span> and <span>organic</span> products for you</h3>
+            <p>From our Farm to your Home without any intermediaries</p>
+            <a href="products.html" class="btn">shop now</a>
+        </div>
     </section>
-
     <!-- home section ends -->
-    
+
+    <!-- User Info Popup -->
+    <div class="user-details" id="userDetails">
+        <p>Logged in as: <strong id="userEmail"></strong></p>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+
     <!-- footer section starts  -->
-
     <section class="footer">
-      <div class="box-container">
-        <div class="box">
-          <h3>FarmEasy <i class="fas fa-seedling"></i></h3>
-          <p>
-            From our farm to your home without any intermediaries
-          </p>
-          <div class="share">
-            <a href="https://github.com/" class="fab fab fa-github"></a>
-            <a href="mailto: farmeasy@gmail.com" class="fas fa-envelope"></a>
-            <a href="#" class="fas fa-phone"></a>
-            
-          </div>
-        </div>
+        <div class="box-container">
+            <div class="box">
+                <h3>FarmEasy <i class="fas fa-seedling"></i></h3>
+                <p>From our farm to your home without any intermediaries</p>
+                <div class="share">
+                    <a href="https://github.com/" class="fab fab fa-github"></a>
+                    <a href="mailto: farmeasy@gmail.com" class="fas fa-envelope"></a>
+                    <a href="#" class="fas fa-phone"></a>
+                </div>
+            </div>
 
-          
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="" class="links">
+                    <i class="fas fa-arrow-right"></i> home
+                </a>
+                <a href="features.html" class="links">
+                    <i class="fas fa-arrow-right"></i> features
+                </a>
+                <a href="categories.html" class="links">
+                    <i class="fas fa-arrow-right"></i> categories
+                </a>
+                <a href="products.html" class="links">
+                    <i class="fas fa-arrow-right"></i> products
+                </a>
+                <a href="learn.html" class="links">
+                    <i class="fas fa-arrow-right"></i> Learn
+                </a>
+                <a href="team.html" class="links">
+                    <i class="fas fa-arrow-right"></i> Team
+                </a>
+            </div>
 
-        <div class="box">
-          <h3>quick links</h3>
-          <a href="" class="links">
-            <i class="fas fa-arrow-right"></i> home
-          </a>
-          <a href="features.html" class="links">
-            <i class="fas fa-arrow-right"></i> features
-          </a>
-          <a href="categories.html" class="links">
-            <i class="fas fa-arrow-right"></i> categories
-          </a>
-          <a href="products.html" class="links">
-            <i class="fas fa-arrow-right"></i> products
-          </a>
-          <a href="learn.html" class="links">
-            <i class="fas fa-arrow-right"></i> Learn
-          </a>
-          <a href="team.html" class="links">
-            <i class="fas fa-arrow-right"></i> Team
-          </a>
-          
-          
-         
-          
+            <div class="box">
+                <h3>newsletter</h3>
+                <p>subscribe for latest updates</p>
+                <input type="email" placeholder="your email" class="email" />
+                <input type="submit" value="subscribe" class="btn" />
+                <img src="image/payment.png" class="payment-img" alt="" />
+            </div>
         </div>
-
-        <div class="box">
-          <h3>newsletter</h3>
-          <p>subscribe for latest updates</p>
-          <input type="email" placeholder="your email" class="email" />
-          <input type="submit" value="subscribe" class="btn" />
-          <img src="image/payment.png" class="payment-img" alt="" />
-        </div>
-      </div>
     </section>
-
     <!-- footer section ends -->
 
+    <!-- Audio element for background music -->
+    <audio id="background-music" src="bgmusic.mp3" preload="auto"></audio>
+
+    <!-- Firebase and custom script -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDeZsOTkBd02r626tGXR3sb2FVYnwLbXcE",
+            authDomain: "farm-easy-login.firebaseapp.com",
+            projectId: "farm-easy-login",
+            storageBucket: "farm-easy-login.appspot.com",
+            messagingSenderId: "1064496595201",
+            appId: "1:1064496595201:web:daeeb9b1dc766eca921b00"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const loginBtn = document.getElementById("login-btn");
+        const userDetails = document.getElementById("userDetails");
+        const userEmail = document.getElementById("userEmail");
+        const audio = document.getElementById('background-music');
+
+        // Function to play audio
+        function playAudio() {
+            audio.play().catch(error => {
+                console.error("Error playing audio: ", error);
+            });
+        }
+
+        // Check if user is logged in
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // Display user email
+                userEmail.textContent = user.email;
+
+                // Show user details popup when the login button is clicked
+                loginBtn.addEventListener("click", () => {
+                    userDetails.style.display = userDetails.style.display === "none" || userDetails.style.display === "" ? "flex" : "none";
+                });
+
+                // Logout functionality
+                const logoutBtn = document.getElementById("logoutBtn");
+                logoutBtn.addEventListener("click", () => {
+                    signOut(auth).then(() => {
+                        alert("Logged out successfully!");
+                        window.location.href = 'signin.html';
+                    }).catch((error) => {
+                        alert("Error logging out: " + error.message);
+                    });
+                });
+            } else {
+                // If no user is logged in, prompt user to sign in
+                loginBtn.addEventListener("click", () => {
+                    alert("Please sign in first.");
+                    window.location.href = 'signin.html';
+                });
+            }
+        });
+
+        // Play background music once when the page loads
+        window.addEventListener('load', playAudio);
+    </script>
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
     <script src="script.js"></script>
-
-   
-  </body>
+</body>
 </html>
