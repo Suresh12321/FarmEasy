@@ -1,78 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmEasy</title>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
-
-    <!-- font awesome cdn link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-
-    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="signin.css" />
-  </head>
-  <body>
+</head>
+<body>
     <!-- header section starts  -->
-
     <header class="header">
-      <a href="./index.html" class="logo">
-        <i class="fas fa-seedling"></i> FarmEasy
-      </a>
+        <a href="./index.html" class="logo">
+            <i class="fas fa-seedling"></i> FarmEasy
+        </a>
 
-      <nav class="navbar">
-        <a href="./index.html">home</a>
-        <a href="./features.html">features</a>
-        <a href="./categories.html">categories</a>
-        <a href="./products.html">products</a>
-        <a href="./learn.html">Learn</a>
-        <a href="./team.html">Team</a>
+        <nav class="navbar">
+            <a href="./index.html">home</a>
+            <a href="./features.html">features</a>
+            <a href="./categories.html">categories</a>
+            <a href="./products.html">products</a>
+            <a href="./learn.html">Learn</a>
+            <a href="./team.html">Team</a>
         </nav>
-        </header>
-        
-      </nav><h2>Sign in/up Form</h2>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		 <form action="https://formsubmit.co/el/vadezu" method="POST">
-			<h1>Create Account</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Sign in</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>
-<script src="signin.js"></script>
+    </header>
+
+    <h2>Sign in/up Form</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#" method="POST" id="signUpForm">
+                <h1>Create Account</h1>
+                <input type="text" id="signUpName" placeholder="Name" required />
+                <input type="email" id="signUpEmail" placeholder="Email" required />
+                <input type="password" id="signUpPassword" placeholder="Password" required />
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#" method="POST" id="signInForm">
+                <h1>Sign in</h1>
+                <input type="email" id="signInEmail" placeholder="Email" required />
+                <input type="password" id="signInPassword" placeholder="Password" required />
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start your journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" src="bgmusic.mp3" preload="auto"></audio>
+
+    <!-- Firebase and custom JavaScript -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDeZsOTkBd02r626tGXR3sb2FVYnwLbXcE",
+            authDomain: "farm-easy-login.firebaseapp.com",
+            projectId: "farm-easy-login",
+            storageBucket: "farm-easy-login.appspot.com",
+            messagingSenderId: "1064496595201",
+            appId: "1:1064496595201:web:daeeb9b1dc766eca921b00"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Panel toggle between Sign In and Sign Up
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        // Sign up event
+        const signUpForm = document.getElementById('signUpForm');
+        signUpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signUpEmail').value;
+            const password = document.getElementById('signUpPassword').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert('Account created successfully!');
+                    console.log(userCredential.user);
+                })
+                .catch((error) => {
+                    alert('Error: ' + error.message);
+                    console.error(error);
+                });
+        });
+
+        // Sign in event
+        const signInForm = document.getElementById('signInForm');
+        signInForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signInEmail').value;
+            const password = document.getElementById('signInPassword').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert('Signed in successfully!');
+                    console.log(userCredential.user);
+                    // Play background music before redirecting
+                    const bgMusic = document.getElementById('bgMusic');
+                    bgMusic.play().then(() => {
+                        // Redirect to index.html after successful sign-in
+                        window.location.href = 'index.html';
+                    }).catch(error => {
+                        console.error("Error playing audio: ", error);
+                        // Still redirect if audio cannot be played
+                        window.location.href = 'index.html';
+                    });
+                })
+                .catch((error) => {
+                    alert('Error: ' + error.message);
+                    console.error(error);
+                });
+        });
+    </script>
+    
+
+    <audio id="background-music" src="bgmusic.mp3" preload="auto"></audio>
+
 </body>
 </html>
