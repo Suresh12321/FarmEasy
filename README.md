@@ -12,9 +12,7 @@ Farm Buddy is a farmer-to-customer,B2B,B2C,C2C online marketplace platform that 
 •	Bootstrap<br>
 •	JavaScript<br>
 <h3>Backend</h3><br>
-<br>
-
-<h3>Tech Stack Used</h3>
+•	Firebase<br>
 <br>
 
 <h2>Features</h2><br>
