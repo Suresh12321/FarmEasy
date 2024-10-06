@@ -1,0 +1,32 @@
+<!-- audio.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Music</title>
+</head>
+<body>
+    <!-- Audio element for background music -->
+    <audio id="background-music" src="bgmusic.mp3" autoplay preload="auto" loop></audio>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        // Check if there's a stored time in localStorage and resume from there
+        const savedTime = localStorage.getItem('audioCurrentTime');
+        if (savedTime) {
+            audio.currentTime = savedTime;
+        }
+
+        // Save the audio's current time every second
+        setInterval(() => {
+            localStorage.setItem('audioCurrentTime', audio.currentTime);
+        }, 1000);
+
+        // Play audio when the page loads
+        audio.play().catch(error => {
+            console.error("Error playing audio: ", error);
+        });
+    </script>
+</body>
+</html>
