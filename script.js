@@ -117,35 +117,53 @@ if (window.location.pathname.endsWith('cart.html')) {
 
 
 // Function to get cart from localStorage or initialize it
+// Get cart from localStorage or initialize it
 function getCart() {
-  return JSON.parse(localStorage.getItem('cart')) || [];
+    return JSON.parse(localStorage.getItem('cart')) || [];
 }
 
-// Function to save cart to localStorage
+// Save cart to localStorage
 function saveCart(cart) {
-  localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Function to show flash message
+function showFlashMessage(message) {
+    const flashMessage = document.createElement('div');
+    flashMessage.className = 'flash-message';
+    flashMessage.innerText = message;
+    
+    // Add the flash message to the body
+    document.body.appendChild(flashMessage);
+
+    // Remove flash message after 3 seconds
+    setTimeout(() => {
+        flashMessage.remove();
+    }, 3000);
 }
 
 // Add product to cart
 function addToCart(productName, price) {
-  let cart = getCart();
-  
-  const existingProduct = cart.find(item => item.name === productName);
-  
-  if (existingProduct) {
-      existingProduct.quantity++;
-  } else {
-      cart.push({ name: productName, price: price, quantity: 1 });
-  }
+    let cart = getCart();
+    
+    // Check if product is already in the cart
+    const existingProduct = cart.find(item => item.name === productName);
+    
+    if (existingProduct) {
+        existingProduct.quantity++;
+    } else {
+        cart.push({ name: productName, price: price, quantity: 1 });
+    }
 
-  saveCart(cart);
-  alert(`${productName} added to cart!`);
+    // Save updated cart to localStorage
+    saveCart(cart);
+
+    // Show a flash message when the product is added to the cart
+    showFlashMessage(`${productName} has been added to your cart!`);
 }
 
-// Remove product from cart
-function removeFromCart(productName) {
-  let cart = getCart();
-  cart = cart.filter(item => item.name !== productName);
-  saveCart(cart);
-  updateCart();
+// Load cart (optional: for cart.html or any other page)
+function loadCart() {
+    let cart = getCart();
+
 }
