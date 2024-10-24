@@ -1,5 +1,9 @@
- <h1>FarmEasy<br>
-Your Farm Partner</h1>
+<h1 align="center">FarmEasy - Your Farm Partner</h1><br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Suresh12321/FarmEasy/refs/heads/main/img/FarmEasy_Readme_img.PNG" alt="FarmEasy" />
+</p>
+
 <h2>Middlemen less Initiative,An E-commerce website for farmers,To Learn Farming in offline way and online way.</h2>
 <h2>Introduction</h2>
 In Agriculture sector there has been always middlemen between the customer and farmer,why should middlemen has to be benefited??..While the Farmer doesn't even getting the profits,if the farmer doesn't get profit who will sought the seeds for the next yield season?About 88% of the suicides of the farmers are because of the debt burden,if the farmer doesn't have enough money to grow the crops then who will grow the crops,farmer is the backbone of our country,if we are not supporting our farmers the country is not gonna survive without the backbone.
