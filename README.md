@@ -31,9 +31,7 @@ The FarmEasy platform provides the following features:<br>
 <h2>Getting Started</h2><br>
 1)To get started with the FarmEasy platform, users must first create an account.<br>
 2)The price of the product will be daily updated on the standard basis of their locally state government.<br>
-3)With the help of the maps provided they can meet the individual or transport the goods.<br>
-6)Customers can contact farmers virtually through the video calling feature .<br>
-7)Rating will be done on overall average based upon their time of transport,quality of the product.<br>
+
 <h2>Future Improvements</h2><br>
 Some future improvements for the farm Buddy platform could include:<br>
 •	Integrating additional payment options to provide customers with more flexibility.<br>
